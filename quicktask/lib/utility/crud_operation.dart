@@ -12,6 +12,7 @@ class CrudOperation {
   void takeInput(BuildContext context) async {
     var uuid = const Uuid();
     final uid = uuid.v4();
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -20,6 +21,7 @@ class CrudOperation {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+
               TextFormField(
                 controller: titleController,
                 enableIMEPersonalizedLearning: true,
@@ -28,6 +30,7 @@ class CrudOperation {
                   hintText: "Title",
                 ),
               ),
+
               TextFormField(
                 controller: notesController,
                 enableIMEPersonalizedLearning: true,
@@ -40,12 +43,14 @@ class CrudOperation {
           ),
         ),
         actions: [
+
           TextButton(
             onPressed: () {
               Navigator.pop(context);
             },
             child: const Text("Cancel"),
           ),
+
           Consumer<TodoProvider>(
             builder: (context, value, child) {
               return TextButton(
@@ -73,9 +78,6 @@ class CrudOperation {
   }
 
   void updateData(BuildContext context, String uid) {
-    final todoProvider = Provider.of<TodoProvider>(context, listen: false);
-
-    // Show dialog to input new data
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -84,6 +86,7 @@ class CrudOperation {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+
               TextFormField(
                 controller: titleController,
                 enableIMEPersonalizedLearning: true,
@@ -92,6 +95,7 @@ class CrudOperation {
                   hintText: "Title",
                 ),
               ),
+
               TextFormField(
                 controller: notesController,
                 enableIMEPersonalizedLearning: true,
@@ -103,6 +107,7 @@ class CrudOperation {
             ],
           ),
         ),
+
         actions: [
           TextButton(
             onPressed: () {
@@ -110,6 +115,7 @@ class CrudOperation {
             },
             child: const Text("Cancel"),
           ),
+
           Consumer<TodoProvider>(
             builder: (context, value, child) {
               return TextButton(
@@ -119,7 +125,7 @@ class CrudOperation {
                     isSave: true,
                     title: titleController.text,
                     notes: notesController.text,
-                    createdOn: Timestamp.now(), // Assume createdOn is now for simplicity
+                    createdOn: Timestamp.now(),
                     editedOn: Timestamp.now(),
                   );
                   value.update(uid, updatedTodo);

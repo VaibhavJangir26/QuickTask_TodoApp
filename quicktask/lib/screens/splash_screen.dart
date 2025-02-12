@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -53,12 +52,14 @@ class _SplashScreenState extends State<SplashScreen> {
           ],
         ),
       ),
+
       bottomSheet: const Padding(
         padding: EdgeInsets.symmetric(vertical: 15),
         child: Text("Make your life easy with QuickTask",
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.blue),),
       ),
+
     );
   }
 }

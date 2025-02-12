@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: MyAppBar(title: "Home",todoList: todoProvider.todoList,)
       ),
+
       body: SafeArea(
         child: StreamBuilder<List<TodoModel>>(
             stream: todoProvider.readData(),

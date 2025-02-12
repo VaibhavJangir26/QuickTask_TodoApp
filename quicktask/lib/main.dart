@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context)=>AuthenticationProvider()),
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context)=>TodoProvider()),
         ChangeNotifierProvider(create: (context)=>InternetConnectionCheckProvider()),
       ],
+
       child: Builder(
         builder: (context) {
           return MaterialApp(

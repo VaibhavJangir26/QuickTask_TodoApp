@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../providers/authentication_provider.dart';
 import '../utility/toast_msg.dart';
 
@@ -133,7 +132,8 @@ class _SignupState extends State<Signup> {
                             ),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
-                                borderSide: const BorderSide(color: Colors.grey))),
+                                borderSide: const BorderSide(color: Colors.grey))
+                        ),
                       ),
 
                       const SizedBox(height: 5,),
@@ -142,10 +142,6 @@ class _SignupState extends State<Signup> {
                       checkBoxList(height, width),
 
                       signupButton(height, width),
-
-                      // continueWith(height, width),
-
-                      // otherSignupOptions(height, width),
 
                       SizedBox(height: height * .005,),
 
@@ -193,9 +189,6 @@ class _SignupState extends State<Signup> {
            );
          },
        ),
-
-
-
     );
   }
 
@@ -213,41 +206,6 @@ class _SignupState extends State<Signup> {
           });
         });
   }
-
-
-  // Widget continueWith(double height,double width){
-  //   return Container(
-  //     width: width,
-  //     height: height * .04,
-  //     alignment: Alignment.center,
-  //     child: const Text("--or Continue with--"),
-  //   );
-  // }
-  //
-  //
-  // Widget otherSignupOptions(double height,double width){
-  //   return Container(
-  //     width: width,
-  //     height: height * .08,
-  //     padding: const EdgeInsets.all(4),
-  //     alignment: Alignment.center,
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       children: [
-  //         const CircleAvatar(
-  //           foregroundColor: Colors.grey,
-  //           foregroundImage: AssetImage("assets/images/googlelogo.png"),
-  //         ),
-  //         SizedBox(width: width * .02,),
-  //         const CircleAvatar(
-  //           foregroundColor: Colors.grey,
-  //           foregroundImage: AssetImage("assets/images/facebooklogo.png"),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
 
   Widget moveToLoginScreen(double height,double width){
     return  Container(

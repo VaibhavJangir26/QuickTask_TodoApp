@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quicktask/utility/search_bar.dart';
-
 import '../models/todo_model.dart';
 
 
@@ -23,6 +22,7 @@ class _MyAppBarState extends State<MyAppBar> {
       centerTitle: true,
       title: Text(widget.title),
       actions: [
+
         Container(
           width: 150,
           height: 42,
@@ -31,6 +31,7 @@ class _MyAppBarState extends State<MyAppBar> {
             color: Theme.of(context).secondaryHeaderColor,
             borderRadius: BorderRadius.circular(15)
           ),
+
           child: InkWell(
             onTap: ()=>showSearch(context: context,delegate: MySearchBar(widget.todoList)),
             child: const Row(
@@ -42,6 +43,7 @@ class _MyAppBarState extends State<MyAppBar> {
               ],
             ),
           ),
+
         ),
       ],
     );

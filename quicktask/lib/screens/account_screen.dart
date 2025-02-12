@@ -25,17 +25,24 @@ class SettingScreenState extends State<SettingScreen> {
         title: const Text("Profile"),
         backgroundColor: Theme.of(context).primaryColor,
       ),
+
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
             child: Column(
               children: [
                 const SizedBox(height: 8,),
+
                 displayProfile(width, height),
+
                 personalDetails(width, height),
+
                 settings(width, height, context),
+
                 faqs(width, height),
+
                 logout(width, height),
+
               ],
             ),
           ),
@@ -51,14 +58,15 @@ class SettingScreenState extends State<SettingScreen> {
         CircleAvatar(
           backgroundColor: Theme.of(context).primaryColor,
           radius: width / 10,
+          child: Image.asset("assets/images/profile.jpg")
         ),
         Text(
-          authProvider.userInfoModel?.displayName ?? "Guest",
+          authProvider.userInfoModel?.displayName?? "Guest",
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
-        Text(authProvider.userInfoModel?.email ?? "guest@gmail.com"),
+        Text(authProvider.userInfoModel?.email?? "guest@gmail.com"),
       ],
     );
   }
@@ -95,6 +103,7 @@ class SettingScreenState extends State<SettingScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text("Change Password",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+
                       Form(
                         key: formKey,
                         child: TextFormField(
@@ -119,6 +128,7 @@ class SettingScreenState extends State<SettingScreen> {
                           ),
                         ),
                       ),
+
                       SizedBox(
                         width: width/2,
                         child: Consumer<AuthenticationProvider>(
@@ -151,14 +161,17 @@ class SettingScreenState extends State<SettingScreen> {
         height: height * .1,
         child: Card(
           child: ListTile(
+
               leading: const Card(
                 elevation: 5,
                 child: Icon(Icons.settings, size: 25),
               ),
+
               title: const Text("Settings"),
               trailing: const Card(
                   child: Icon(Icons.keyboard_arrow_right)
               ),
+
               onTap: () {
                 showModalBottomSheet(
                     context: context,
@@ -213,6 +226,7 @@ class SettingScreenState extends State<SettingScreen> {
             ),
             title: const Text("FAQ's"),
             onTap: (){
+
               showModalBottomSheet(
                   context: context,
                   enableDrag: true,
@@ -222,15 +236,18 @@ class SettingScreenState extends State<SettingScreen> {
                   useSafeArea: true,
                   builder: (context){
                 return Padding(
+
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+
                         const Text("We're here to help you with anything and everything on QuickTask",
                         style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                         const Text("FAQs",style: TextStyle(fontSize: 20),),
+
                         ExpansionTile(
                           title: const Text("How to create?"),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

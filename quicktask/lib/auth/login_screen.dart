@@ -121,10 +121,6 @@ class _LoginState extends State<Login> {
 
                         loginButton(height, width),
 
-                        // continueWith(height, width),
-
-                        // loginOptions(height, width),
-
                         SizedBox(height: height*.005,),
 
                         newRegister(height, width),
@@ -155,6 +151,7 @@ class _LoginState extends State<Login> {
     );
   }
 
+
   Widget loginButton(double height,double width){
     return Container(
       width: width*.6,
@@ -183,39 +180,6 @@ class _LoginState extends State<Login> {
 
     );
   }
-
-
-  // Widget continueWith(double height,double width){
-  //   return Container(
-  //     width: width,
-  //     height: height*.04,
-  //     alignment: Alignment.center,
-  //     child: const Text("-or Continue with-"),
-  //   );
-  // }
-
-  // Widget loginOptions(double height,double width){
-  //   return Container(
-  //     width: width,
-  //     height: height*.08,
-  //     padding: const EdgeInsets.all(4),
-  //     alignment: Alignment.center,
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       children: [
-  //         const CircleAvatar(
-  //           foregroundImage: AssetImage(""),
-  //           foregroundColor: Colors.grey,
-  //         ),
-  //         SizedBox(width: width*.02,),
-  //         const CircleAvatar(
-  //           foregroundColor: Colors.grey,
-  //           foregroundImage: AssetImage(""),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
 
   Widget newRegister(double height,double width){
     return Container(

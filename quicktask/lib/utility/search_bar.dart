@@ -32,8 +32,8 @@ class MySearchBar extends SearchDelegate {
   @override
   Widget buildResults(BuildContext context) {
     List<TodoModel> result = todoList.where((event) {
-      String titleLower = event.title?.toLowerCase() ?? '';
-      String notesLower = event.notes?.toLowerCase() ?? '';
+      String titleLower = event.title?.toLowerCase()?? '';
+      String notesLower = event.notes?.toLowerCase()?? '';
       final queryLower = query.toLowerCase();
       return titleLower.contains(queryLower) || notesLower.contains(queryLower);
     }).toList();
@@ -64,7 +64,8 @@ class MySearchBar extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<String> suggestionsItems = [
+
+    List<String> suggestionsItems = [  // this is our suggestion list
       "Good morning",
       "Playing",
       "Meeting",
@@ -88,11 +89,12 @@ class MySearchBar extends SearchDelegate {
     }
 
     List<TodoModel> suggestions = todoList.where((event) {
-      String titleLower = event.title?.toLowerCase() ?? '';
-      String notesLower = event.notes?.toLowerCase() ?? '';
+      String titleLower = event.title?.toLowerCase()??'';
+      String notesLower = event.notes?.toLowerCase()??'';
       final queryLower = query.toLowerCase();
       return titleLower.contains(queryLower) || notesLower.contains(queryLower);
     }).toList();
+
     if (suggestions.isEmpty) {
       return const Center(
         child: Text("No matching todo found.",
@@ -101,14 +103,15 @@ class MySearchBar extends SearchDelegate {
         ),
       );
     }
+
     return ListView.builder(
       itemCount: suggestions.length,
       itemBuilder: (context, index) {
         final TodoModel suggest = suggestions[index];
         return Card(
           child: ListTile(
-            title: Text(suggest.title ?? 'No match found'),
-            subtitle: Text(suggest.notes ?? 'No match found'),
+            title: Text(suggest.title??'No match found'),
+            subtitle: Text(suggest.notes??'No match found'),
             onTap: (){
               query=suggest.title??'';
               showResults(context);

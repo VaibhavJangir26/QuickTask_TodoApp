@@ -14,6 +14,7 @@ class LoadingShimmer extends StatelessWidget {
                 baseColor: Colors.grey.shade400,
                 highlightColor: Colors.white,
                 child: ListTile(
+
                   title: Container(
                     width: width*.7,
                     height: 24,
@@ -22,6 +23,7 @@ class LoadingShimmer extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
+
                   subtitle: Container(
                     width: width*.6,
                     height: 15,
@@ -30,6 +32,7 @@ class LoadingShimmer extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
+
                 ),
             );
           }

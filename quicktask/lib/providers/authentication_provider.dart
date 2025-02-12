@@ -22,6 +22,7 @@ class AuthenticationProvider extends ChangeNotifier{
     _auth.authStateChanges().listen(onAuthChanged);
   }
 
+
   Future<void> onAuthChanged(User? firebaseUser) async {
     if (firebaseUser == null) {
       _userInfoModel = null;
@@ -40,6 +41,7 @@ class AuthenticationProvider extends ChangeNotifier{
     }
     notifyListeners();
   }
+
 
   Future<void> login(String email, String password, BuildContext context) async {
     _isLoading = true;
@@ -61,6 +63,7 @@ class AuthenticationProvider extends ChangeNotifier{
       notifyListeners();
     }
   }
+
 
   Future<void> signup(String email, String password, String name, BuildContext context) async {
     _isLoading = true;
@@ -85,6 +88,7 @@ class AuthenticationProvider extends ChangeNotifier{
       notifyListeners();
     }
   }
+
 
   Future<void> changePassword(String newPassword) async {
     _isLoading = true;
